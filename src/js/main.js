@@ -28,6 +28,14 @@ function processData (data) {
     };
     $("#myform").append(inputHTML);
   };
+  var iconArray= [`<i class="fa fa-user" aria-hidden="true"></i>`,
+                  `<i class="fa fa-user" aria-hidden="true"></i>`,
+                  `<i class="fa fa-envelope" aria-hidden="true"></i>`,
+                  `<i class="fa fa-globe" aria-hidden="true"></i>`,
+                  `<i class="fa fa-comments" aria-hidden="true"></i>`,
+                  `<i class="fa fa-mobile" aria-hidden="true"></i>`,
+                  `<i class="fa fa-phone" aria-hidden="true"></i>`
+                  ];
   var foot = `
     <div class="footer">
       <button class="submit" type="button" name="button">Submit Form</button>
