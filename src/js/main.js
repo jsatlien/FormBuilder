@@ -1,10 +1,10 @@
 import $ from 'jquery'
 
 function processData (data) {
-  console.log(data);
     // loop over the data
   var header= `<header id="head">Sign Up For My Web App</header>`;
   $("#myform").append(header);
+  var inputArray=[];
   for (var i = 0; i < data.length; i++) {
   // generate html for each thing in data
     if (data[i].label === "Select Language") {
@@ -23,25 +23,24 @@ function processData (data) {
     }
     else {
     var inputHTML = `
-    <p><input class="form" type="text" placeholder="${data[i].label}"><p>
+    <p><input class="form" id="${data[i].id}" type="text" placeholder="${data[i].label}"><p>
     `;
     };
+
     $("#myform").append(inputHTML);
-  };
-  var iconArray= [`<i class="fa fa-user" aria-hidden="true"></i>`,
-                  `<i class="fa fa-user" aria-hidden="true"></i>`,
-                  `<i class="fa fa-envelope" aria-hidden="true"></i>`,
-                  `<i class="fa fa-globe" aria-hidden="true"></i>`,
-                  `<i class="fa fa-comments" aria-hidden="true"></i>`,
-                  `<i class="fa fa-mobile" aria-hidden="true"></i>`,
-                  `<i class="fa fa-phone" aria-hidden="true"></i>`
-                  ];
+    };
+    var userIcon = `
+      <i class="fa fa-user" id=first-name-iconaria-hidden="true"></i>
+      `;
+
+    $("#user-first-name").append(userIcon);
+
   var foot = `
     <div class="footer">
       <button class="submit" type="button" name="button">Submit Form</button>
     </div>
   `;
-    $("#myform").append(foot);
+    $("#submitbar").append(foot);
 };
 
 
@@ -50,7 +49,6 @@ function renderForm () {
     url: `http://json-data.herokuapp.com/forms`,
     success: processData
   });
-  console.log(info);
 };
 
 // var test = $.getJSON(info);
