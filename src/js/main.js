@@ -1,12 +1,10 @@
 import $ from 'jquery'
 
 function processData (data) {
-    // loop over the data
   var header= `<header id="head">Sign Up For My Web App</header>`;
   $("#myform").append(header);
   var inputArray=[];
   for (var i = 0; i < data.length; i++) {
-  // try adding a lot more if statements for the icons
     if (data[i].label === "Select Language") {
       var inputHTML = `
       <div class="inputLine">
@@ -38,7 +36,6 @@ function processData (data) {
     $("#myform").append(inputHTML);
     };
 
-
   var foot = `
     <div class="footer">
       <button class="submit" type="button" name="button">Submit Form</button>
@@ -46,7 +43,6 @@ function processData (data) {
   `;
     $("#submitbar").append(foot);
 };
-
 
 function renderForm () {
   var info = $.ajax({
