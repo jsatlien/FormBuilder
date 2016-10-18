@@ -6,7 +6,7 @@
   margin: 90px 30px;
   width: 535px;
   height: 660px;
-  border: 1px solid lightgrey;
+  border: 2px solid lightgrey;
 }
 
 #myform {
@@ -40,7 +40,10 @@
   height: 35px;
   width: 484px;
   font-size: 11px;
-  padding-left: 10px;
+  padding-left: 30px;
+  border-radius: 3px;
+  border: 1px solid lightgrey;
+  
 }
 
 .dropmenu {
@@ -58,11 +61,25 @@
 
  #user-comment {
   height: 80px;
-  padding-bottom: 50px;
+  // padding-bottom: 45px;
+  border: 1px solid lightgrey;
+  border-radius: 2px;
+  padding-top: 12px;
 }
 
-p {
+.inputLine{
   margin: 0px;
+  position: relative;
+
+  i {
+    color: lightgrey;
+    display: inline-block;
+    position: absolute;
+    top: 20px;
+    left: 10px;
+    height: 2px;
+    font-size: 12px;
+  }
 }
 #user-phone {
   margin-bottom: 15px;
@@ -71,10 +88,11 @@ p {
 #submitbar {
   background-color: #CADEEF;
   height: 75px;
-  width: 533px;
+  width: 531px;
   margin-right: 0px;
-  margin-top: 22px;
+  margin-top: 16px;
   padding: 20px;
+
   .submit {
     height: 35px;
     width: 100px;

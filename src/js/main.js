@@ -6,34 +6,38 @@ function processData (data) {
   $("#myform").append(header);
   var inputArray=[];
   for (var i = 0; i < data.length; i++) {
-  // generate html for each thing in data
+  // try adding a lot more if statements for the icons
     if (data[i].label === "Select Language") {
       var inputHTML = `
-      <p>
+      <div class="inputLine">
       <select class="dropmenu" name="select">
-      <option value="" disabled selected style="display: none;">${data[i].label}</option>
+      <option value="" disabled selected style="display: none;">Select language...</option>
       <option value="value1">${data[i].options[0].label}</option>
       <option value="value2">${data[i].options[1].label}</option>
       <option value="value3">${data[i].options[2].label}</option>
       <option value="value4">${data[i].options[3].label}</option>
       <option value="value5">${data[i].options[4].label}</option>
       </select>
-      <p>
+      </div>
           `;
-    }
-    else {
+    } else if (data[i].label === "Your Comment") {
+      var inputHTML = `
+      <div class="inputLine">
+      <i class="fa ${data[i].icon}"></i>
+      <textarea class="form" id="${data[i].id}" placeholder="${data[i].label}"></textarea>
+      </div>`
+    } else {
     var inputHTML = `
-    <p><input class="form" id="${data[i].id}" type="text" placeholder="${data[i].label}"><p>
+    <div class="inputLine">
+    <i class="fa ${data[i].icon}"></i>
+    <input class="form" id="${data[i].id}" type="text" placeholder="${data[i].label}">
+    </div>
     `;
     };
 
     $("#myform").append(inputHTML);
     };
-    var userIcon = `
-      <i class="fa fa-user" id=first-name-iconaria-hidden="true"></i>
-      `;
 
-    $("#user-first-name").append(userIcon);
 
   var foot = `
     <div class="footer">
@@ -50,9 +54,5 @@ function renderForm () {
     success: processData
   });
 };
-
-// var test = $.getJSON(info);
-//
-// console.log(test);
 
 renderForm()

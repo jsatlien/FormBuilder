@@ -3,3 +3,5 @@ a JSON blob and template literals.
 
 surge link:
 tiy-jackstorrs-formBuilderOct17.surge.sh
+
+<!-- get rid of the capital letters -->
